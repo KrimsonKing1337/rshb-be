@@ -11,7 +11,7 @@ export async function apiGet() {
     driver: sqlite3.Database,
   });
 
-  const result = await db.get(`SELECT * from Users`);
+  const result = await db.all(`SELECT * from Users`);
 
   await db.close();
 

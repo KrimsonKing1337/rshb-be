@@ -1,12 +1,14 @@
 import express from 'express';
 
+import type { User } from 'types/@types.js';
+
 import { apiGet } from 'api/apiGet.js';
 import { apiPut } from 'api/apiPut.js';
 
 export const router = express.Router();
 
 router.get('/api', async (_req, res) => {
-  const sqlResult = await apiGet();
+  const sqlResult: User[] = await apiGet();
 
   res.send(sqlResult);
 });
